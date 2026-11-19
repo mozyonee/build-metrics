@@ -1,0 +1,26 @@
+{
+	"run": {
+		"id": 101,
+		"name": "CI",
+		"head_branch": "main",
+		"head_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+		"status": "completed",
+		"conclusion": "success",
+		"repository": { "full_name": "acme/build_metrics" },
+		"created_at": "2026-11-01T10:00:00Z",
+		"run_started_at": "2026-11-01T10:00:30Z",
+		"updated_at": "2026-11-01T10:05:30Z"
+	},
+	"jobs": [
+		{
+			"id": 1,
+			"name": "test",
+			"conclusion": "success",
+			"started_at": "2026-11-01T10:00:30Z",
+			"completed_at": "2026-11-01T10:05:30Z"
+		}
+	],
+	"tests": [{ "name": "test_login", "sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "conclusion": "pass" }],
+	"caches": [{ "key": "pip", "result": "hit" }],
+	"artifacts": [{ "id": 9, "name": "logs", "size_in_bytes": 1200 }]
+}
