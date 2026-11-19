@@ -33,15 +33,9 @@ class ReportExporter:
         if not selected:
             raise LookupError("empty period")
         dest = Path(dest)
-        title = "\u0417\u0432\u0456\u0442 \u043c\u0435\u0442\u0440\u0438\u043a \u0437\u0431\u0456\u0440\u043a\u0438"
-        repo_label = "\u0420\u0435\u043f\u043e\u0437\u0438\u0442\u043e\u0440\u0456\u0439"
-        duration_label = "\u0442\u0440\u0438\u0432\u0430\u043b\u0456\u0441\u0442\u044c"
-        run_label = "\u043f\u0440\u043e\u0433\u0456\u043d"
-        lines = [f"# {title}", "", f"{repo_label}: {repo}", ""]
+        lines = ["# Звіт метрик збірки", "", f"Репозиторій: {repo}", ""]
         for row in selected:
-            lines.append(
-                f"- {run_label} {row['id']} ({row['branch']}): {duration_label} {row['duration_seconds']} \u0441"
-            )
+            lines.append(f"- прогін {row['id']} ({row['branch']}): тривалість {row['duration_seconds']} с")
         text = "\n".join(lines) + "\n"
         lowered = text.lower()
         for bad in ("token", "authorization", "secret"):
